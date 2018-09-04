@@ -1,0 +1,32 @@
+{extend name='base'/}
+{block name='content'}
+<div class="col-md-10">
+  <div class="panel panel-default">
+  	 <div class="panel-heading">新闻中心</div>
+  	 <div class="panel-body">
+  	 	<table class="table table-condensed table-hover" style="">
+  	 		<caption>
+          <a class="btn btn-success" href="">栏目管理</a>
+  	 			<a class="btn btn-success" href="{:url('admin/articlenews/index')}">新闻管理</a>
+  	 		</caption>
+  	 			<tr>
+  	 				<th>编号</th>
+  	 				<th>栏目名称</th>
+  	 				<th>操作</th>
+  	 			</tr>
+          {volist name='res' id='value'}
+  	 			<tr>
+  	 				<td style="line-height: 30px;">{$value.sort}</td>
+  	 				<td style="line-height: 30px;">{$value.sortname}</td>
+  	 				<td>
+  	 					    <a href="" class="btn btn-info">编辑</a>
+  	 					    <a href="" class="btn btn-danger">删除</a>
+  	 				</td>
+  	 			</tr>
+          {/volist}
+  	 	</table>
+          <a class="btn btn-default" href="{:url('store')}">添加</a>
+  	 </div>
+  </div>
+ </div>
+{/block}

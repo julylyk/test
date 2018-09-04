@@ -1,0 +1,51 @@
+{extend name='base'/}
+{block name='content'}
+<div class="culmn">
+	<!--Home page style-->
+	<img src="__STATIC__/images/about_us/news.jpg"/>
+</div>
+<div class="container">
+<div class="con row"> 	
+
+    <div class="fl">
+    	<div class="lanmu hidden-xs hidden-sm">
+            <ul>
+                {volist name='sort' id='value'}
+            	<li><a href="{:url('index/news/index',['sort_id'=>$value.sort_id])}">{$value.sortname}</a></li>
+                {/volist}    
+            </ul>
+        </div>
+    </div>
+
+  <div class="fr col-md-9">
+    <div class="title">公司新闻<span class="hidden-xs hidden-sm">当前位置：<a href='index.html'>主页</a> > <a href='news1.html'>新闻中心/News</a> > <a href='javascript:;'>{$ress.sortname}</a></span></div>
+    <div class="nr">
+      <div class="news-body">
+		<div class="new-list">
+                    
+                    {volist name='res' id='value'}
+                    <div class="new-list-item clearfix">
+                        <div class="col-xs-4">
+                            <img src="__ROOT__/public/{$value.path}" alt="">
+                        </div>
+                        <div class="col-xs-7">
+                            <a href="{:url('index/newscontent/index',['id'=>$value.id])}" class="title">{$value.name}</a>
+                            <div class="info">
+                                <span>{$value.sortname}</span> ⋅
+                                <span>{:date('Y-m-d',$value.createtime)}</span>
+                            </div>
+                        </div>
+                    </div>
+                    {/volist}
+                </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+	<!-- scroll up-->
+	<div class="scrollup">
+		<a href="#"><i class="fa fa-chevron-up"></i></a>
+	</div><!-- End off scroll up -->
+{/block}

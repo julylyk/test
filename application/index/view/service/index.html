@@ -1,0 +1,55 @@
+{extend name='base'/}
+{block name='content'}
+<div class="culmn">
+	<!--Home page style-->
+	<img src="__STATIC__/images/about_us/service.jpg"/>
+</div>
+<div class="container">
+	<div class="con row"> 	
+				<div class="fl">
+			    	<div class="lanmu hidden-xs hidden-sm">
+			            <ul>
+			            	{volist name='_service' id='value'}
+			            	<li><a href="{:url('index/service/index',['id'=>$value.id])}">{$value.sortname}</a></li>
+			            	{/volist}
+			            	<li><a href="{:url('index/service/index2')}">货物跟踪</a></li>
+			            </ul>
+			        </div>
+			    </div>
+
+			  <div class="fr col-md-9">
+			    <div class="title">客户服务<span class="hidden-xs hidden-sm">当前位置：<a href='index.html'>主页</a> > <a href='services1.html'>客户服务/Services</a> > <a href='services1.html'>{$ress.sortname}</a></span></div>
+			    <div class="nr">
+			      <div class="news-body">
+			        <div class="newsdetail"><p style="line-height: 30px; font-size: 14px; text-align: left;">
+				<img alt="" src="__ROOT__/public/{$res.path}" style="width: 134px; height: 155px;float:left;margin-right:80px;" />
+			<p style="line-height:30px; font-size:14px;">	　　
+			 {$res.content}
+			</p>
+				<div class="rage_widget">
+					<p>
+					客服1<br/>
+					MSN：Raja Sun<br/>
+					QQ：2355551613 <br/>
+					mail：mkt3.szx@bsigroup.cc<br/>
+					<br/>
+					客服2<br/>
+					MSN：Raja Sun<br/>
+					QQ：2355551613 <br/>
+					mail：mkt3.szx@bsigroup.cc<br/>
+					<br/>
+					</p>
+					</div>
+					</p>
+			</div>
+			      </div>
+			    </div>
+			  </div>
+			</div>
+	</div>
+</div>
+	<!-- scroll up-->
+	<div class="scrollup">
+		<a href="#"><i class="fa fa-chevron-up"></i></a>
+	</div><!-- End off scroll up -->
+{/block}

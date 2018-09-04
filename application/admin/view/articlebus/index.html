@@ -1,0 +1,53 @@
+{extend name='base'/}
+{block name='content'}
+<div class="col-md-10">
+  <div class="panel panel-default">
+  	 <div class="panel-heading">业务范围管理</div>
+  	 <div class="panel-body">
+  	 	<table class="table table-condensed" style="">
+  	 		<caption>
+  	 			<button class="btn btn-info">文章列表</button>
+  	 			<a class="btn btn-success" href="{:url('store')}">添加文章</a>
+  	 		</caption>
+  	 			<tr>
+  	 				<th>文章名称</th>
+            <th>所属分类</th>
+            <th>添加时间</th>
+  	 				<th>操作</th>
+  	 			</tr>
+          {volist name='sortData' id='value'}
+          <tr>
+            <td style="line-height: 28px;">{$value.name}</td>
+            <td style="line-height: 28px;">{$value.sortname}</td>
+            <td style="line-height: 28px;">{:date('Y-m-d',$value['createtime'])}</td>
+            <td style="line-height: 28px;">
+                  <a href="{:url('edit',['id'=>$value.id])}" class="btn btn-info">编辑</a>
+                  <a href="{:url('del',['id'=>$value.id])}" class="btn btn-danger">删除</a>
+            </td>
+          </tr>
+          {/volist}
+  	 	</table>
+  
+  	 </div>
+  </div style='right: 0px'>
+ </div>
+<script>
+  function changeSort(obj,arc_id)
+  {
+    //获取修改完成之后的数据
+    var arc_sort=$(obj).val();
+    // alert(sort);
+    // alert(arc_id);
+    $.post("{:url('changeSort')}",{arc_sort:arc_sort,arc_id:arc_id},function(res){
+         if(res.code)
+         {
+          //执行成功
+          util.message(res.msg,'refresh','success');
+         }else{
+          //执行失败
+          util.message(res.msg,'back','error');
+         }
+    },'json')
+  }
+</script>
+{/block}

@@ -1,0 +1,36 @@
+{extend name='base'/}
+{block name='content'}
+<div class="col-md-10">
+  <div class="panel panel-default">
+  	 <div class="panel-heading">用户管理</div>
+  	 <div class="panel-body">
+  	 	<table class="table table-bordered table-hover" style="">
+  	 		<caption>
+  	 			<button class="btn btn-info">留言列表</button>
+  	 			<a class="btn btn-success" href="{:url('admin/message/export')}">导出</a>
+  	 		</caption>
+  	 			<tr>
+  	 				<th>姓名</th>
+            <th>电话</th>
+  	 				<th>发送时间</th>
+            <th>访问ip</th>
+            <th>留言</th>
+  	 			</tr>
+          {volist name='res' id='value'}
+  	 			<tr>
+  	 				<td style="line-height: 30px;">{$value.name}</td>
+            <td style="line-height: 30px;">{$value['phone']}</td>
+            <td style="line-height: 30px;">{:date('Y-m-d',$value['createtime'])}</td>
+            <td>{$value.ip}</td>
+            <td style="line-height: 30px;">
+              <textarea name="" disabled="ture">{$value['content']}</textarea>
+            </td>
+
+  	 			</tr>
+          {/volist}
+  	 	</table>
+      {$res->render()}
+  	 </div>
+  </div>
+ </div>
+{/block}

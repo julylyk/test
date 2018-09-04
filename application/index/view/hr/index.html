@@ -1,0 +1,42 @@
+{extend name='base'/}
+{block name='content'}
+<div class="culmn">
+	<!--Home page style-->
+	<div class="banner_on">
+	<img src="__STATIC__/images/about_us/hr.jpg"/>
+</div>
+<div class="container">
+		<div class="con row"> 	
+			<div class="fl">
+		    	<div class="lanmu hidden-xs hidden-sm">
+		            <ul>
+						{volist name='_hr' id='value'}
+		            	<li><a href="{:url('index/hr/index',['id'=>$value.id])}">{$value.sortname}</a></li>
+		            	{/volist}
+		            	<li><a href="{:url('index/hr/index2')}">加入益高</a></li>
+		            </ul>
+		        </div>
+		    </div>
+
+		  <div class="fr col-md-9">
+		    <div class="title">培训发展<span class="hidden-xs hidden-sm">当前位置：<a href='index.html'>主页</a> > <a href='hr1.html'>人力资源/HR</a> > <a href='hr2.html'>{$ress.sortname}</a></span></div>
+		    <div class="nr">
+		      <div class="news-body">
+		        <div class="newsdetail"><p style="line-height: 30px; font-size: 14px; text-align: center;">
+			<img alt="" src="__STATIC__/images/about_us/peixun.jpg" style="width: 100%; height: 100%;" /></p>
+		<p style="line-height:30px; font-size:14px;">
+			　　{$res['content']}
+		</p>
+
+		</div>
+		      </div>
+		    </div>
+		  </div>
+		</div>
+	</div>
+</div>
+	<!-- scroll up-->
+	<div class="scrollup">
+		<a href="#"><i class="fa fa-chevron-up"></i></a>
+	</div><!-- End off scroll up -->
+{/block}

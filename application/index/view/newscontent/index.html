@@ -1,0 +1,45 @@
+{extend name='base'/}
+{block name='content'}
+<div class="culmn">
+    <div class="banner_on">
+	<img src="__STATIC__/images/about_us/news.jpg"/>
+    </div>
+<div class="container">
+<div class="con row"> 	
+    <div class="fl">
+    	<div class="lanmu hidden-xs hidden-sm">
+            <ul>
+                {volist name='sort' id='value'}
+            	<li><a href="{:url('index/news/index',['sort_id'=>$value.sort_id])}">{$value.sortname}</a></li>
+                {/volist}
+            </ul>
+        </div>
+    </div>
+
+  <div class="fr col-md-9">
+    <div class="title">公司新闻<span class="hidden-xs hidden-sm">当前位置：<a href='index.html'>主页</a> > <a href='news1.html'>新闻中心/News</a> > <a href='news1.html'>{$res.sortname}</a></span></div>
+    <div class="nr">
+      <div class="news-body">
+        <div class="col-md-12">
+        <h1 class="news-title">{$res.name}</h1>
+        <div class="new-status"> 发布时间：{:date('Y-m-d',$res.createtime)} 浏览次数：{$res.see}
+            <div class="label label-default">{$res.sortname}</div>
+        </div>
+        <div class="new-content">
+            <img src="__ROOT__/public/{$res.path}" alt="">
+            <div>
+                {$res.content}
+            </div>
+        </div>
+    </div>       
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+</div>
+	<!-- scroll up-->
+	<div class="scrollup">
+		<a href="#"><i class="fa fa-chevron-up"></i></a>
+	</div><!-- End off scroll up -->
+{/block}

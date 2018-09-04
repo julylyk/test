@@ -1,0 +1,70 @@
+{extend name='base'/}
+{block name='content'}
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            关于益高
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed" style="">
+                <caption>
+                    <a class="btn btn-info" href="{:url('admin/aboutus/index')}">
+                        公司简介
+                    </a>
+                    <a class="btn btn-info" href="{:url('admin/aboutus/index2')}">
+                        公司理念
+                    </a>
+                    <a class="btn btn-info" href="{:url('admin/aboutus/index3')}">
+                        团队风采
+                    </a>
+                    <a class="btn btn-info" href="{:url('admin/aboutus/index4')}">
+                        奖项荣誉
+                    </a>
+                        <form class="form-group" action="{:url('aboutus/uploads')}" method="post" enctype="multipart/form-data">
+                           <div class="row">
+                          <p> <input type="file" name="file" class="btn btn-default" style="margin: 5px;">&nbsp;&nbsp;推荐：<span style="color: red;">1920*700</span>；前台最多显示6张照片</p>
+                           <input type="submit" name="" class="btn btn-success" style="margin:5px;" value="上传">
+                           </div>
+                        </form>
+                </caption>
+                <tr>
+                    <th>
+                        文章名称 / 缩略图
+                    </th>
+                    <th>
+                        修改时间
+                    </th>
+                    <th>
+                        操作
+                    </th>
+                </tr>
+                <tr>
+                    <td style="line-height: 28px;">
+                        团队风采
+                    </td>
+                    <td style="line-height: 28px;">
+                        {:date('Y-m-d',$res['createtime'])}
+                    </td>
+                    <td style="line-height: 28px;">
+                        <a class="btn btn-success" href="{:url('editus3')}">
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+                {volist name='ress' id='value'}
+                          <tr>
+                                <td style="line-height: 30px;"><img src="__ROOT__/public/{$value['path']}" alt="" width="100px;" height="60px;"></td>
+                                <td style="line-height: 30px;">{:date('Y-m-d',$value['createtime'])}</td>
+                            <td>
+                              <div class="btn-group">
+                              <a href="{:url('admin/aboutus/delus2',['id'=>$value['id']])}" title="" class='btn btn-default'>删除</a>
+                              </div>
+                            </td>
+                          </tr>
+                {/volist}
+            </table>
+            {$ress->render()}
+        </div>
+    </div>
+</div>
+{/block}

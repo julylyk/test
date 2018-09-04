@@ -1,0 +1,35 @@
+{extend name='base'/}
+{block name='content'}
+<div class="col-md-10">
+  <div class="panel panel-default">
+     <div class="panel-heading">服务内容管理</div>
+     <div class="panel-body">
+      <table class="table table-condensed" style="">
+        <caption>
+          <button class="btn btn-info">服务项目列表</button>
+          <a class="btn btn-info" href="{:url('store')}">添加内容</a>
+          <a class="btn btn-primary" href="{:url('join')}">加入益高</a>
+        </caption>
+          <tr>
+            <th>文章名称</th>
+            <th>所属分类</th>
+            <th>添加时间</th>
+            <th>操作</th>
+          </tr>
+          {volist name='res' id='value'}
+          <tr>
+            <td style="line-height: 28px;">{$value.name}</td>
+            <td style="line-height: 28px;">{$value.sortname}</td>
+            <td style="line-height: 28px;">{:date('Y-m-d',$value.createtime)}</td>
+            <td style="line-height: 28px;">
+                  <a href="{:url('edit',['id'=>$value.id])}" class="btn btn-info">编辑</a>
+                  <a href="{:url('del',['id'=>$value.id])}" class="btn btn-danger">删除</a>
+            </td>
+          </tr>
+          {/volist}
+      </table>
+  
+     </div>
+  </div style='right: 0px'>
+ </div>
+{/block}

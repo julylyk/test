@@ -1,0 +1,38 @@
+{extend name='base'/}
+{block name='content'}
+<div class="col-md-10">
+  <div class="panel panel-default">
+     <div class="panel-heading">人力资源管理</div>
+     <div class="panel-body">
+      <table class="table table-condensed table-hover" style="">
+        <caption>
+          <a class="btn btn-success" href="{:url('index')}">返回</a>
+        </caption>
+          <tr>
+            <th>招聘职位</th>
+            <th>工作地点</th>
+            <th>招聘人数</th>
+            <th>发布时间</th>
+            <th>状态</th>
+            <th>操作</th>
+          </tr>
+          {volist name='res' id='value'}
+          <tr>
+            <td style="line-height: 30px;">{$value.name}</td>
+            <td style="line-height: 30px;">{$value.address}</td>
+            <td style="line-height: 30px;">{$value.count}</td>
+            <td style="line-height: 30px;">{$value.createtime}</td>
+            <td style="line-height: 30px;">{$value.status}</td>
+            <td>
+                  <a href="{:url('editjoin',['id'=>$value.id])}" class="btn btn-info">编辑</a>
+                  <a href="{:url('deljoin',['id'=>$value.id])}" class="btn btn-danger">删除</a>
+            </td>
+          </tr>
+          {/volist}
+      </table>
+          <a class="btn btn-default" href="{:url('storejoin')}">添加</a>
+     </div>
+     {$res->render()}
+  </div>
+ </div>
+{/block}

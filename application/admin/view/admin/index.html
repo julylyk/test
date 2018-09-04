@@ -1,0 +1,39 @@
+{extend name='base'/}
+{block name='content'}
+<div class="col-md-10">
+  <div class="panel panel-default">
+  	 <div class="panel-heading">图片管理</div>
+  	 <div class="panel-body">
+  	 	<table class="table table-condensed table-hover" style="">
+  	 		<caption>
+          <form class="form-group" action="{:url('slide/uploadslide')}" method="post" enctype="multipart/form-data">
+             <div class="row">
+            <p> <input type="file" name="file" class="btn btn-default" style="margin: 5px;">&nbsp;&nbsp;推荐：<span style="color: red;">1920*700</span>；前台最多显示4张幻灯片</p>
+             <input type="submit" name="" class="btn btn-success" style="margin:5px;" value="上传">
+             </div>
+          </form>
+
+  	 		</caption>
+  	 			<tr>
+  	 				<th>文件名</th>
+            <th>缩略图</th>
+            <th>上传时间</th>
+  	 				<th>操作</th>
+  	 			</tr>
+				{volist name='res' id='value'}
+  	 			<tr>
+  	 				<td style="line-height: 30px;">{$value.name}</td>
+            		<td style="line-height: 30px;"><img src="__ROOT__/public/{$value.path}" alt="" width="100px;" height="60px;"></td>
+                <td>{:date('Y-m-d',$value.createtime)}</td>
+  	 				<td>
+  	 					<div class="btn-group">
+							<a href="javascript:if(confirm('确实要删除吗?'))location='{:url('delslide',['id'=>$value.id])}'" title="" class='btn btn-default'>删除</a>
+  	 					</div>
+  	 				</td>
+  	 			</tr>
+				{/volist}
+  	 	</table>
+  	 </div>
+  </div>
+ </div>
+ {/block}

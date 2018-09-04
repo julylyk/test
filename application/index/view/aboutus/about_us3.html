@@ -1,0 +1,65 @@
+﻿{extend name='base'/}
+{block name='content'}
+<div class="culmn">
+	<!--Home page style-->
+	<div class="banner_on">
+		<img src="__STATIC__/images/about_us/about.jpg"/>
+	</div>
+<div class="con">
+ 	<div class="fl">
+		<div class="lanmu">
+            <ul>
+            	<li><a href="{:url('index/aboutus/about_us')}">公司简介</a></li>
+                
+            	<li><a href="{:url('index/aboutus/about_us2')}">公司理念</a></li>
+                
+            	<li><a href="{:url('index/aboutus/about_us3')}">团队风采</a></li>
+				<li><a href="{:url('index/aboutus/about_us4')}">奖项荣誉</a></li>
+                
+            </ul>
+        </div>
+    </div>
+
+  <div class="fr">
+    <div class="title">团队风采<span>当前位置：<a href='index.html'>主页</a> > <a href='about_us.html'>关于益高/About Us</a> > <a href='about_us3.html'>团队风采</a></span></div>
+    <div class="nr">
+      <div class="news-body">
+	<!--Blog Section-->
+	<section id="blog" class="blog lightbg">
+		<div>
+			<div class="row">
+			<div class="col-sm-8">
+						<div class=" text-left">
+							<p>{$res['content']}</p>
+						</div>
+					</div>
+			</div>
+			<div class="row">
+				<div class="main_blog" id="tuandui">
+					{volist name='ress' id='value'}
+					<div class="col-md-4">
+						<div class="blog_item m-top-10">
+							<div class="blog_item_img">
+								<img src="__ROOT__/public/{$value['path']}" alt="" />
+							</div>
+						</div>
+					</div>
+					{/volist}
+
+
+
+					
+				</div>
+			</div><!--End off row -->
+		</div><!--End off container -->
+	</section><!-- End off Blog section-->
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+	<!-- scroll up-->
+	<div class="scrollup">
+		<a href="#"><i class="fa fa-chevron-up"></i></a>
+	</div><!-- End off scroll up -->
+{/block}

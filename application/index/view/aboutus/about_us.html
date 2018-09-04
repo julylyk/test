@@ -1,0 +1,37 @@
+﻿{extend name='base'/}
+{block name='content'}
+<div class="culmn">
+	<img src="__STATIC__/images/about_us/about.jpg"/>
+</div>
+<div class="con"> 	<div class="fl">
+    	<div class="lanmu">
+            <ul>
+            
+            	<li><a href="{:url('index/aboutus/about_us')}">公司简介</a></li>
+                
+            	<li><a href="{:url('index/aboutus/about_us2')}">公司理念</a></li>
+                
+            	<li><a href="{:url('index/aboutus/about_us3')}">团队风采</a></li>
+                <li><a href="{:url('index/aboutus/about_us4')}">奖项荣誉</a></li>
+            </ul>
+        </div>
+    </div>
+
+  <div class="fr">
+    <div class="title">公司简介<span>当前位置：<a href='index.html'>主页</a> > <a href=''>关于益高/About Us</a> > <a href='about_us.html'>公司简介</a></span></div>
+    <div class="nr">
+      <div class="news-body">
+        <div class="newsdetail"><p style="line-height: 30px; font-size: 14px; text-align: center;">
+	      <img alt="" src="__ROOT__/public/{$ress['path']}" style="width: 733px; height: 216px;" /></p>
+        <p style="line-height:30px; font-size:14px;">{$res['content']}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</div>
+	<!-- scroll up-->
+	<div class="scrollup">
+		<a href="#"><i class="fa fa-chevron-up"></i></a>
+	</div><!-- End off scroll up -->
+{/block}

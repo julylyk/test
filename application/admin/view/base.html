@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>index</title>
+	<link rel="stylesheet" type="text/css" href="__STATIC__/css/bootstrap.css">
+	<link rel="icon" href="__STATIC__/images/logo.ico" type="image/x-icon"/>
+	<meta charset="utf-8">
+	<script src="__STATIC__/js/jquery.min.js"></script>
+	<script src="__STATIC__/js/bootstrap.min.js"></script>
+
+	<script>
+	    window.hdjs = {};
+	    //组件目录必须绝对路径（在网站根目录下时不用设置）
+	    window.hdjs.base = '__STATIC__/hdjs';
+	</script>
+
+
+	<script src="__STATIC__/hdjs/dist/static/requirejs/require.js"></script>
+	<script src="__STATIC__/hdjs/dist/static/requirejs/config.js"></script>
+<!-- 	<script src="__STATIC__/hdjs/dist/static/requirejs/require.js"></script>
+	<script src="__STATIC__/hdjs/dist/static/requirejs/config.js"></script> -->
+</head>
+<body>
+	<div class="navbar navbar-inverse" style="border-radius: 0px;">
+		<div class="container-fluid">
+			<div class="navbar-header">
+				<a href="" title="" class="navbar-brand">ETL后台</a>
+				<ul class="nav navbar-nav">
+					<li><a href="https://www.kancloud.cn/manual/thinkphp5/118003" title="" target="_blank"><span class="glyphicon glyphicon-list-alt"></span> 在线文档</a></li>
+					<li><a href="https://v3.bootcss.com/components/" title="" target="_blank"><span class="
+					glyphicon glyphicon-asterisk"></span> 图标库</a></li>
+					<li><a href="" title=""><span class="glyphicon glyphicon-globe"></span> 网站信息</a></li>
+				</ul>
+			</div>
+			<div class="navbar-header navbar-right" style="margin-right: 50px;">
+				<div class="dropdown" style="line-height: 50px;">
+				  <a id="dLabel" data-target="this" data-toggle="dropdown" role="button" style="text-decoration: none;"><span class="glyphicon glyphicon-user" aria-hidden="true"></span> 
+				    
+				     <span class="caret"></span>
+				  </a>
+				  <ul class="dropdown-menu" aria-labelledby="dLabel">
+				    <li><a href="">修改密码</a></li>
+				    <li class="divider"></li>
+				     <li><a href="">退出</a></li>
+				  </ul>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<!-- 左侧菜单栏 -->
+	<div class="container-fluid">
+		<div class="col-md-2">
+			<div class="panel-group" id="accordion" role="tablist" aria-multiselectable="false">
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="headingSix">
+			      <h4 class="panel-title">
+			        <span class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseSix" aria-expanded="false" aria-controls="collapseSix">
+			          图片管理
+			        </span>
+			      </h4>
+			    </div>
+			    <div id="collapseSix" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingSix">
+			      <div class="panel-body"><span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span> <a href="{:url('admin/admin/index')}" title="" class="menua"> 幻灯片图片</a></div>				      
+			    </div>
+
+			  </div>	
+
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="headingTwo">
+			      <h4 class="panel-title">
+			        <span class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+			          文章管理
+			        </span>
+			      </h4>
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+			      <div class="panel-body"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><a href="{:url('admin/aboutus/index')}" title="" class="menua"> 关于益高</a></div>			      
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+			      <div class="panel-body"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><a href="{:url('admin/business/index')}" title="" class="menua"> 业务范围</a></div>			      
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+			      <div class="panel-body"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><a href="{:url('admin/news/index')}" title="" class="menua"> 新闻中心</a></div>			      
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+			      <div class="panel-body"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><a href="{:url('admin/service/index')}" title="" class="menua"> 服务支持</a></div>			      
+			    </div>
+			    <div id="collapseTwo" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingTwo">
+			      <div class="panel-body"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><a href="{:url('admin/hr/index')}" title="" class="menua"> 人力资源</a></div>			      
+			    </div>
+			  </div>
+				
+			  <div class="panel panel-default">
+			    <div class="panel-heading" role="tab" id="headingFive">
+			      <h4 class="panel-title">
+			        <span class="collapsed" role="button" data-toggle="collapse" data-parent="#accordion" href="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+			          留言管理
+			        </span>
+			      </h4>
+			    </div>
+			    <div id="collapseFive" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingFive">
+			      <div class="panel-body"><span class="glyphicon glyphicon-wrench" aria-hidden="true"></span><a href="{:url('admin/message/index')}" title="" class="menua"> 留言列表</a></div>			      
+			    </div>
+			  </div>
+			</div>
+		</div>
+		{block name='content'}{/block}
+	</div>
+</body>
+<script>
+	$('.menua').hover(function(){
+		$(this).css({
+			'text-decoration': 'none'
+		});
+	})
+</script>
+</html>

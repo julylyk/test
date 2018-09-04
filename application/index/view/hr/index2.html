@@ -1,0 +1,57 @@
+{extend name='base'/}
+{block name='content'}
+<div class="culmn">
+	<!--Home page style-->
+	<img src="__STATIC__/images/about_us/hr.jpg"/>
+</div>
+<div class="container">
+        <div class="con row"> 	
+            <div class="fl">
+                	<div class="lanmu hidden-xs hidden-sm">
+                        <ul>
+                            {volist name='_hr' id='value'}
+                        	<li><a href=":url('index/hr/index',['id'=>$value.id])">{$value.sortname}</a></li>
+                            {/volist}
+                        	<li><a href="{:url('index/hr/index2')}">加入益高</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+              <div class="fr col-md-9">
+                <div class="title">在线招聘<span class="hidden-xs hidden-sm">当前位置：<a href='index.html'>主页</a> > <a href='hr1.html'>人力资源/HR</a> > <a href='hr3.html'>加入益高</a></span></div>
+                <div class="nr">
+                  <div class="news-body">
+                    <div class="newsdetail">
+                      <p style="line-height: 30px; font-size: 14px; text-align: center;">
+                     <img alt="" src="__STATIC__/images/about_us/666677.jpg" style="width: 100%; height: 100%;" /></p>
+            	  	<table class="table table-bordered table-striped table-hover table-condensed">
+                        <tr class="info">
+                            <th>招聘职位</th>
+                            <th>工作地点</td>
+                            <th>招聘人数</th>
+                            <th>发布时间</th>
+                            <th>状态</th>
+                        </tr>
+                        {volist name='_joinus' id='value'}
+                          <tr>
+                            <td>{$value.name}</td>
+                            <td>{$value.address}</td>
+                            <td>{$value.count}</td>
+                            <td>{$value.createtime}</td>
+                            <td>{$value.status}</td>
+                        </tr>
+                        {/volist}
+                    </table>
+                    {$_joinus->render()}
+            </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+        </div>
+</div>
+	<!-- scroll up-->
+	<div class="scrollup">
+		<a href="#"><i class="fa fa-chevron-up"></i></a>
+	</div><!-- End off scroll up -->
+{/block}

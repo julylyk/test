@@ -1,0 +1,69 @@
+{extend name='base'/}
+{block name='content'}
+<div class="col-md-10">
+    <div class="panel panel-default">
+        <div class="panel-heading">
+            关于益高
+        </div>
+        <div class="panel-body">
+            <table class="table table-condensed" style="">
+                <caption>
+                    <a class="btn btn-info" href="{:url('admin/aboutus/index')}">
+                        公司简介
+                    </a>
+                    <a class="btn btn-info" href="{:url('admin/aboutus/index2')}">
+                        公司理念
+                    </a>
+                    <a class="btn btn-info" href="{:url('admin/aboutus/index3')}">
+                        团队风采
+                    </a>
+                    <a class="btn btn-info" href="{:url('admin/aboutus/index4')}">
+                        奖项荣誉
+                    </a>
+                </caption>
+                <tr>
+                    <th>
+                        文章名称 / 缩略图
+                    </th>
+                    <th>
+                        修改时间
+                    </th>
+                    <th>
+                        操作
+                    </th>
+                </tr>
+                <tr>
+                    <td style="line-height: 28px;">
+                        公司简介
+                    </td>
+                    <td style="line-height: 28px;">
+                        {:date('Y-m-d',$res['createtime'])}
+                    </td>
+                    <td style="line-height: 28px;">
+                        <a class="btn btn-success" href="{:url('editus')}">
+                            编辑
+                        </a>
+                    </td>
+                </tr>
+                <tr>
+                    <td style="line-height: 30px;">
+                      <img src="__ROOT__/public/{$ress['path']}" alt="" width="100px;" height="60px;">
+                    </td>
+                  <td style="line-height: 28px;">
+                    {:date('Y-m-d',$ress['createtime'])}
+                  </td>
+                  <td style="line-height: 28px;">
+                    <form class="form-group" action="{:url('admin/aboutus/imageus')}" method="post" enctype="multipart/form-data">
+                       <div class="row">
+                        <input type="hidden" name="id" value="1">
+                       <p> <input type="file" name="file" class="" style="margin: 5px;">
+                       <input type="submit" name="" class="btn btn-success" style="margin:5px;" value="上传">&nbsp;&nbsp;推荐：<span style="color: red;">733*216</span></p>
+                       </div>
+                    </form>
+                  </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+</div>
+{/block}
